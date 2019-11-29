@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>Eco web-app</title>
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="../dist/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="../dist/css/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../dist/css/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="../dist/css/animate.min.css" />
+		<link rel="stylesheet" href="../dist/css/fonts.googleapis.com.css" />
+<!-- bootstrap-colorpicker -->
+<link href="../dist/js/colorpicker/bootstrap-colorpicker.min.css" rel="stylesheet"/>
+<!-- bootstrap-colorpicker -->
+<link href="../dist/js/selectpicker/bootstrap-select.css" rel="stylesheet"/>
+<!-- bootstrap-datepicker -->
+<link href="../dist/js/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+<!-- bootstrap-daterangepicker -->
+<link href="../dist/js/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet"/>
+<!-- ace styles -->
+<link rel="stylesheet" href="../dist/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+<!-- ace settings handler -->
+<script src="../dist/js/ace-extra.min.js"></script>
+<!--[if lte IE 8]>
+<script src="dist/lib/html5shiv.min.js"></script>
+<script src="dist/lib/respond.min.js"></script>
+<![endif]-->
+<style>
+#datatable th{border:1px solid;}
+#datatable td{border:1px solid;}
+input[type=text]:focus { background-color:#ffedad;}
+@media print{
+.btn{display:none;}
+}
+</style></head>
+
+
+<!-- PAGE CONTENT BEGINS -->
+<div class='page-header'><h1>Risorse umane<span class='label label-lg label-pink arrowed-in arrowed-in-right'>Aggiungi dipendente</span><div class='space-2'></div>
+<div class='space-2'></div><div id='collapse_dbs_menu' class='collapse' style='border:1px solid #1B6AAA; padding:5px; border-radius:5px 5px 5px 5px;'><div class='row'><div class='col-xs-10 text-left'><table width='100%' class='small'><tr><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=1&idana=201908ECO0000028001'><i class='fa fa-address-card-o blue'></i> Dati Base</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=3&idana=201908ECO0000028001'><i class='fa fa-book pink'></i> Inquadramento</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=24&idana=201908ECO0000028001'><i class='fa fa-key red'></i> Profili Sicurezza</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=2&idana=201908ECO0000028001'><i class='fa fa-clock-o orange'></i> Scadenziario</a></td></tr><tr><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=4&idana=201908ECO0000028001'><i class='fa fa-list blue'></i> Dati retributivi</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=5&idana=201908ECO0000028001'><i class='fa fa-list-ol red'></i> Dati bancari</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=6&idana=201908ECO0000028001'><i class='fa fa-address-book-o black'></i> Indirizzi</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=7&idana=201908ECO0000028001'><i class='fa fa-address-book green'></i> Storico</a></td></tr><tr><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=8&idana=201908ECO0000028001'><i class='fa fa-calendar purple'></i> Eventi</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=9&idana=201908ECO0000028001'><i class='fa fa-paperclip violet'></i> Allegati</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=10&idana=201908ECO0000028001'><i class='fa fa-newspaper-o orange'></i> Scheda candidatura</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=11&idana=201908ECO0000028001'><i class='fa fa-angellist blue'></i> Formazione</a></td></tr><tr><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=12&idana=201908ECO0000028001'><i class='fa fa-sticky-note-o blue'></i> Annotazioni</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=13&idana=201908ECO0000028001'><i class='fa fa-adjust blue'></i> Dotazioni e materiali (DPI)</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=14&idana=201908ECO0000028001'><i class='fa fa-anchor blue'></i> Esperienze lavorative</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=15&idana=201908ECO0000028001'><i class='fa fa-briefcase blue'></i> Studi</a></td></tr><tr><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=16&idana=201908ECO0000028001'><i class='fa fa-magic blue'></i> Strumenti</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=17&idana=201908ECO0000028001'><i class='fa fa-tags small blue'></i> Obiettivi</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=18&idana=201908ECO0000028001'><i class='fa fa-hourglass-end blue'></i> Storico Retrib.</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=19&idana=201908ECO0000028001'><i class='fa fa-hourglass-end blue'></i> Nomine/Deleghe formali</a></td></tr><tr><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=20&idana=201908ECO0000028001'><i class='fa fa-hourglass-end blue'></i> Profilazione applicativi(DGPR 2016/679)</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=21&idana=201908ECO0000028001'><i class='fa fa-calendar red'></i> Calendario eventi consuntivo</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=22&idana=201908ECO0000028001'><i class='fa fa-qrcode red'></i> Qr code</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=23&idana=201908ECO0000028001'><i class='fa fa-list blue'></i> Mansioni</a></td></tr><tr><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=25&idana=201908ECO0000028001'><i class='fa fa-medkit red'></i> Visite</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=26&idana=201908ECO0000028001'><i class='fa fa-car pink'></i> Multe</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=27&idana=201908ECO0000028001'><i class='fa fa-cubes blue '></i> Corsi</a></td><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=28&idana=201908ECO0000028001'><i class='fa fa-envelope orange'></i> Comunicazioni</a></td></tr><tr><td style='padding:5px 5px 5px 5px;font-size:14px;'><a class='blue' href='rum.php?spg=rum0&spgsub=29&idana=201908ECO0000028001'><i class='fa fa-image pink'></i> Immagine del profilo</a></td></table></div><div class='col-xs-2 text-center small'>Matricola:0000028001<div class='space-6'></div><img style='width:128px;' class='img img-circle' src='img/avatars/woman.png'/><div class='space-6'></div>ABBONDANDOLO VERONICA</div></div></div></h1></div><form method="post" action="" role="form" class="form">
+<fieldset>
+<div class="row">
+<div class="col-md-2 bolder"><br />Matricola</div>
+<div class="col-md-2"><br /><input type="text" class="form-control" id="MATRICOLA_MECCANOGRAFICA" value="" NAME="MATRICOLA_MECCANOGRAFICA"></div>
+<div class="col-md-3"><span class="bolder">Cognome</span><input type="text" class="form-control" id="COGNOME" value="" NAME="COGNOME"></div>
+<div class="col-md-3"><span class="bolder">Nome</span><input type="text" class="form-control" id="NOME" value="" NAME="NOME"></div>
+<div class="col-md-2"><span class="bolder">Sesso</span>
+<select class="form-control" id="SESSO" NAME="SESSO">
+<option value="M">M</option>
+<option selected value="F">F</option>
+</select>
+</div>
+</div>
+<div class="space-2"></div>
+<div class="row">
+<div class="col-md-2 bolder">Sede/Filiale</div>
+<div class="col-md-4"><div class='input-group'><span class='input-group-addon'>
+<a href='#' data-toggle='modal' data-target='#1'>...</a></span>
+<input type="text" class="form-control" id="" value="" NAME="DESCRIZIONE_REPARTO_01">
+</div></div>
+<div class="col-md-3"><div class='input-group'><span class='input-group-addon'>
+<a href='#' data-toggle='modal' data-target='#1'>...</a></span>
+<input type="text" class="form-control" id="" value="" NAME="DESCRIZIONE_REPARTO_02">
+</div></div>
+<div class="col-md-3"><div class='input-group'><span class='input-group-addon'>
+<a href='#' data-toggle='modal' data-target='#1'>...</a></span>
+<input type="text" class="form-control" id="" value="" NAME="DESCRIZIONE_REPARTO_03">
+</div></div>
+</div>
+<div class="space-2"></div>
+<div class="row">
+<div class="col-md-2 bolder">Nazionalit&aacute;</div>
+<div class="col-md-4"><div class='input-group'><span class='input-group-addon'><a href='#' data-toggle='modal' data-target='#1'>...</a></span>
+<input type="text" class="form-control" id="NAZIONALITA" value="" NAME="NAZIONALITA">
+</div></div>
+<div class="col-md-2 bolder">Categoria</div>
+<div class="col-md-4"><div class='input-group'><span class='input-group-addon'><a href='#' data-toggle='modal' data-target='#1'>...</a></span>
+<input type="text" class="form-control" id="NR_CCNL_APPLICATO" value="" NAME="NR_CCNL_APPLICATO">
+</div></div>
+</div>
+<div class="space-2"></div>
+<div class="row">
+<div class="col-md-2 bolder">Posizione dipendente</div>
+<div class="col-md-10">
+<div class='input-group'><span class='input-group-addon'>
+<a href='#' data-toggle='modal' data-target='#1'>...</a></span>
+<input type="text" name="POSIZIONE_DIPENDENTE" value="" class="form-control" />
+</div></div>
+</div>
+<div class="space-2"></div>
+<div class="row">
+<div class="col-md-2 bolder">Data assunzione</div>
+<div class="col-md-4">
+<input type="text" class="form-control input-datepicker" id="DATA_ASSUNZIONE" value="" NAME="DATA_ASSUNZIONE">
+</div>
+<div class="col-md-2 bolder">Data cessazione</div>
+<div class="col-md-4">
+<input type="text" class="form-control input-datepicker" id="DATA_CESSAZIONE" value="" NAME="DATA_CESSAZIONE">
+</div>
+</div>
+<div class="space-2"></div>
+<div class="row">
+<div class="col-md-2 bolder">Tempo determinato</div>
+<div class="col-md-4">
+<input type="text" class="form-control" id="CONTRATTO_DI_FORMAZIONE__TEMPO_DETERMINATO" value="" NAME="CONTRATTO_DI_FORMAZIONE__TEMPO_DETERMINATO">
+</div>
+<div class="col-md-2 bolder">Decorrenza</div>
+<div class="col-md-4"><input type="text" class="form-control input-datepicker" id="DATA_FINE_RAPPORTO__TEMPO_DETERMINATO" value="" NAME="DATA_FINE_RAPPORTO__TEMPO_DETERMINATO"></div>
+</div>
+<div class="space-2"></div>
+<div class="row">
+<div class="col-md-2 bolder">Data fine contratto</div>
+<div class="col-md-10"><input type="text" class="form-control input-datepicker" id="DATA_TRASFORMAZIONE_A_TEMPO_INDETERMINATO" value="" NAME="DATA_TRASFORMAZIONE_A_TEMPO_INDETERMINATO">
+</div>
+</div>
+<div class="space-2"></div>
+<div class="row">
+<div class="col-md-2 bolder">Titolo di studio</div>
+<div class="col-md-4"><div class='input-group'><span class='input-group-addon'><a href='#' data-toggle='modal' data-target='#1'>...</a></span><input type="text" name="" class="form-control" value="" /></div></div>
+<div class="col-md-6"><input type="text" class="form-control" id="TITOLO_DI_STUDIO" value="" NAME="TITOLO_DI_STUDIO">
+</div>
+</div>
+<div class="space-2"></div>
+<div class="row">
+<div class="col-md-2 bolder">P.time%</div>
+<div class="col-md-4">
+<input type="text" class="form-control" id="PERC_PART_TIME" value="" NAME="PERC_PART_TIME">
+</div>
+<div class="col-md-2 bolder">Decorrenza</div>
+<div class="col-md-4"><input type="text" placeholder="gg/mm/aaaa" name="" class="form-control input-datepicker" value="" /></div>
+</div>
+<div class="space-2"></div>
+<div class="row">
+<div class="col-md-2 bolder">Codice fiscale</div>
+<div class="col-md-10"><input type="text" class="form-control" id="CODICE_FISCALE" value="" NAME="CODICE_FISCALE">
+</div>
+</div>
+<div class="space-2"></div>
+<div class="row">
+<div class="col-md-2 bolder">Email</div>
+<div class="col-md-10"><input type="text" class="form-control" id="INDIRIZZO_POSTA_ELETTRONICA_E_MAIL_RESIDENZA" value="" NAME="INDIRIZZO_POSTA_ELETTRONICA_E_MAIL_RESIDENZA">
+</div>
+</div>
+<hr />
+<div class="row hidden">
+<div class="col-md-3"><button name="btn" class="btn btn-success btn-sm btn-block"><i class='fa fa-file-excel-o'></i> Excel</button></div>
+<div class="col-md-3"><button name="btn" class="btn btn-success btn-sm btn-block"><i class='fa fa-envelope'></i> Invia</button></div>
+<div class="col-md-3"><button name="btn" class="btn btn-success btn-sm btn-block"><i class='fa fa-file'></i> Registra</button></div>
+<div class="col-md-3"><button name="btn" class="btn btn-primary btn-sm btn-block"><i class='fa fa-sign-out'></i> Uscita</button></div>
+</div>
+</fieldset>
+</form>
+<!-- PAGE CONTENT ENDS -->
+</div><!-- /.col -->
+</div><!-- /.row -->
+</div><!-- /.page-content -->
+</div>
+</div><!-- /.main-content -->
+<div class="footer hidden-print hidden">
+<div class="footer-inner">
+<div class="footer-content">
+<span class="bigger-120">
+<span class="blue bolder">hrwebdynamics.it</span>
+Application &copy; 2019 </span>
+&nbsp; &nbsp;
+<span class="action-buttons">
+<a target="_blank" href="">
+<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+</a>
+<a target="_blank" href="">
+<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+</a>
+</span>
+</div>
+</div>
+</div>
+<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+</a>
+<!--modal x la selezione da elenco-->
+<div id="modal_seleziona_da_elenco" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<span class="btn btn-primary btn-xs pull-right" data-dismiss="modal">Chiudi</span>
+<h4 class="modal-title">Premi sulla voce interessata</h4>
+</div>
+<div class="modal-body modal-body-elenco" id='modal-body'></div>
+<div class="modal-footer">
+<span class="btn btn-primary btn-xs" data-dismiss="modal">Chiudi</span>
+</div>
+</div>
+</div>
+</div> </div><!-- /.main-container -->
+
+
+<script src="../dist/lib/jquery-3.1.0.min.js"></script>
+<script src="../dist/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+if('ontouchstart' in document.documentElement) document.write("<script src='dist/lib/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="../dist/bootstrap/bootstrap.min.js"></script>
+<!-- Validator form-->
+<script src="../dist/js/validator.min.js"></script>
+<!--textarea che si allunga in base a inserimento-->
+<script src="../dist/js/autosize.min.js"></script>
+<!-- bootstrap-datepicker -->
+<script src="../dist/js/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="../dist/js/bootstrap-datepicker/js/bootstrap-datepicker.it.min.js"></script>
+<!--select picker-->
+<script src="../dist/js/selectpicker/bootstrap-select.js"></script>
+<!--copia e incolla-->
+<script src="../dist/js/clipboard.min.js"></script>
+<!-- bootstrap-datatable -->
+<script src="../dist/js/datatable/jquery.dataTables.min.js"></script>
+<script src="../dist/js/datatable/dataTables.bootstrap.min.js"></script>
+<!--notifiche-->
+<script src="../dist/js/bootstrap-notify.min.js"></script>
+<!-- ace scripts -->
+<script src="../dist/js/ace-elements.min.js"></script>
+<script src="../dist/js/ace.min.js"></script>
+<script>
+$(document).ready(function() {
+//tooltip
+$('[data-tooltip="tooltip"]').tooltip();
+//textarea ch si allunga in base inserimento
+autosize($('textarea'));
+//clipboard.js x copia e incolla
+//end ready
+});
+//clipboard copia
+var clipboard = new ClipboardJS('.clipboard_copy_from');
+clipboard.on('success', function(e) {
+console.info('Action:', e.action);
+console.info('Text:', e.text);
+console.info('Trigger:', e.trigger);
+e.clearSelection();
+});
+clipboard.on('error', function(e) {
+console.error('Action:', e.action);
+console.error('Trigger:', e.trigger);
+});
+//data table
+$('#datatable').DataTable( {
+scrollY: 400,
+scrollCollapse: true,
+paging: false,
+"language": {
+"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Italian.json"
+}
+});
+//se seleziono azienda al volo
+$("#idazn_sel").change(function() {
+var idazn_sel=$("#idazn_sel").val();
+$("#risposta_header_change_azn").html("<i class='fa fa-spinner fa-spin'></i> Caricamento <b>"+idazn_sel+"</b> in corso...");
+$.ajax({
+type : "POST",
+url : "navbar_files/ajax/header_cambia_azienda.php",
+data : "idazn_sel="+idazn_sel,
+dataType: "html",
+success : function(risposta){$("#risposta_header_change_azn").html(risposta);},
+error : function(){$("#risposta_header_change_azn").html("<code>Errore del server</code>");
+}
+})
+});
+$(".input-selectpicker").selectpicker({
+style:"btn-inverse",
+noneSelectedText : 'Seleziona un valore' // by this default 'Nothing selected' -->will change to Please Select
+});
+//datepicker
+$('.input-datepicker').datepicker({
+format: "dd/mm/yyyy",
+todayBtn: "linked",
+clearBtn: true,
+language: "it",
+multidateSeparator: "-",
+calendarWeeks: true,
+autoclose: true,
+todayHighlight: true
+});
+//mi permette di contare i checkbox selezionati e avvisare utente di selezionare almeno 1
+$("#checkbox_box").click(function() {
+var contaselezionati = $('#checkbox_box :input[type="checkbox"]:checked').length;
+if(contaselezionati>0){
+$("#checkbox_box_label").html("Selezionati <span class='badge badge-primary'> "+contaselezionati+" </span>");
+$("#checkbox_box_btn").show();
+}else{
+$("#checkbox_box_label").html("<div class='alert alert-danger'>Seleziona almeno 1</div>");
+$("#checkbox_box_btn").hide();
+}
+});
+//creo il cookie x il menu
+$(".menu_sidebar"). click(function(){
+var mnu = $(this).attr("data-mnu");
+var lbl = $(this).attr("data-mnu-lbl");
+$.cookie('mnu', mnu, { expires: 1 });
+$.cookie('lbl', lbl, { expires: 1 });
+});
+$('.check_del').change(function() {
+if ($(this).prop('checked')) {
+$("button").removeClass("btn-success" ).addClass("btn-danger").html("<i class='fa fa-trash'></i> Cancella | operazione irreversibile");
+}
+else {
+$("button").removeClass("btn-danger" ).addClass("btn-success").html("<i class='fa fa-save'></i> Salva");
+}
+});
+$("input[name=check_del]").change(function() {
+if ($(this).prop('checked')) {
+$("button").removeClass("btn-success" ).addClass("btn-danger").html("<i class='fa fa-trash'></i> Cancella | operazione irreversibile");
+}
+else {
+$("button").removeClass("btn-danger" ).addClass("btn-success").html("<i class='fa fa-save'></i> Salva");
+}
+});
+//quando premo sul menu seleziona da elenco
+$(".btn-link").click(function() {
+$("#modal_seleziona_da_elenco").modal('show');
+var fld_nme = $(this).attr("data-fld-nme");
+var fld_id = $(this).attr("data-fld-id");
+$(".modal-body-elenco").html("<h4><i class='fas fa-spinner fa-spin'></i> Caricamento dati in corso...</h4>");
+$(".modal-body-elenco").load("HrRum_files/prp_files/ajax/sql_seleziona_da_elenco.php?fld_nme="+fld_nme+"&fld_id="+fld_id);
+});
+</script>
+<script>
+$(document).ready(function() {
+// end ready
+});
+$("#btn_dbs_prf_snt_add").click(function (event) {
+$("#risposta_dbs_prf_snt").html("<i class='fa fa-spinner fa-spin'></i> Estrazione dati in corso attendere...");
+var dta_css = $('#DATA_CESSAZIONE').val();
+var dta_cns = $('#PRF_SNT_DTA_CNS').val();
+var cod_azn = $(this).attr("data-codazn");
+var cod_mat = $(this).attr("data-codmat");
+$.ajax({
+type :"POST",
+url :"HrRum_files/dbs_files/ajax/sql_dbs_prf_snt_add.php",
+data :"dta_css="+dta_css+"&dta_cns="+dta_cns+"&cod_azn="+cod_azn+"&cod_mat="+cod_mat,
+dataType:"html",
+success : function (data) {
+$("#risposta_dbs_prf_snt").html(data);
+},
+error : function (e) {
+$("#risposta_dbs_prf_snt").html("<code>Errore del server</code>");
+}
+});
+});
+</script>
+</body>
+</html>
